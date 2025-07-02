@@ -1,0 +1,161 @@
+
+### Category Requests
+
+###
+GET /categories
+Host: localhost:9000
+Accept: application/json
+
+###
+GET /categories/by-id?categoryId=1
+Host: localhost:9000
+Accept: application/json
+
+###
+POST /categories/create-update
+Host: localhost:9000
+Content-Type: application/json
+
+{
+    "name": "Новая Категория",
+    "description": "Описание Новой Категории"
+}
+
+###
+POST /categories/create-update
+Host: localhost:9000
+Content-Type: application/json
+
+{
+    "id": 8,
+    "name": "Новая Категория EDITED"
+}
+
+###
+DELETE /categories/delete?categoryId=8
+Host: localhost:9000
+
+### Product Requests
+
+###
+GET /products
+Host: localhost:9000
+Accept: application/json
+
+###
+POST /products/create-update
+Host: localhost:9000
+Content-Type: application/json
+
+{
+    "model": "N2-psh",
+    "characteristics": "Характеристики смартфона N2-psh",
+    "price": 120999.99,
+    "categoryId": 1
+}
+
+###
+POST /products/create-update
+Host: localhost:9000
+Content-Type: application/json
+
+{
+    "id": 1,
+    "characteristics": "Характеристики ноутбука N2-psh-Turbo"
+}
+
+###
+POST /products/create-update-list
+Host: localhost:9000
+Content-Type: application/json
+
+[
+    {
+        "model": "ES15",
+        "characteristics": "Характеристики смартфона ES15",
+        "price": 79999.99,
+        "categoryId": 2
+    },
+    {
+        "model": "UIT-89",
+        "characteristics": "Характеристики Персонального Компьютера UIT-89",
+        "price": 249999.99,
+        "categoryId": 3
+    },
+    {
+        "model": "QWE-34",
+        "characteristics": "Характеристики Планшета QWE-34",
+        "price": 59999.99,
+        "categoryId": 4
+    }
+]
+
+### Department Requests
+
+###
+GET /departments
+Host: localhost:9000
+Accept: application/json
+
+###
+GET /departments/by-id?departmentId=1
+Host: localhost:9000
+Accept: application/json
+
+###
+POST /departments/create-update
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Новый Отдел",
+    "description": "Описание Нового отдела"
+}
+
+###
+DELETE /departments/delete?departmentId=4
+Host: localhost:9000
+Accept: text/plain
+
+### Employee Requests
+
+###
+GET /employees
+Host: localhost:9000
+Accept: application/json
+
+###
+GET /employees/by-id?employeeId=1
+Host: localhost:9000
+Accept: application/json
+
+###
+POST /employees/create-update
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Олег",
+    "surname": "Паркуров",
+    "patronymic": "Петрович",
+    "departmentId": 1
+}
+
+###
+POST /employees/create-update
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+
+{
+    "id": 1,
+    "patronymic": "Константинович",
+    "departmentId": 2
+}
+
+###
+DELETE /employees/delete?employeeId=1
+Host: localhost:9000
+Accept: text/plain

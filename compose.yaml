@@ -1,0 +1,40 @@
+
+services:
+
+  postgres-first:
+    image: postgres:latest
+    container_name: postgres_first
+    ports:
+      - "6000:5432"
+    environment:
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres_first_db
+      PGDATA: /var/lib/data/postgresql
+
+  postgres-second:
+    image: postgres:latest
+    container_name: postgres_second
+    ports:
+      - "6010:5432"
+    depends_on:
+      - postgres-first
+    environment:
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres_second_db
+      PGDATA: /var/lib/data/postgresql
+
+  replica-shard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    depends_on:
+      - postgres-first
+      - postgres-second
+    restart: unless-stopped
+    environment:
+      FIRST_DATASOURCE_URL: jdbc:postgresql://postgres-first:5432/postgres_first_db
+      SECOND_DATASOURCE_URL: jdbc:postgresql://postgres-second:5432/postgres_second_db

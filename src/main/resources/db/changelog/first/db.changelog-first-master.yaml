@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/first/db.changelog-first-1.0.sql
+  - include:
+      file: db/changelog/first/db.changelog-first-1.1.sql

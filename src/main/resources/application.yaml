@@ -1,0 +1,20 @@
+
+server:
+  port: 9000
+spring:
+  application:
+    name: replica-shard
+  jpa:
+    open-in-view: false
+first:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:6000/postgres_first_db
+    username: postgres
+    password: postgres
+second:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:6010/postgres_second_db
+    username: postgres
+    password: postgres
