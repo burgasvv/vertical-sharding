@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.burgas</groupId>
-	<artifactId>replica-shard</artifactId>
+	<artifactId>vertical-sharding</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>replica-shard</name>
-	<description>replica-shard</description>
+	<name>vertical-sharding</name>
+	<description>vertical-sharding</description>
 	<url/>
 	<licenses>
 		<license/>

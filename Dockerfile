@@ -1,3 +1,4 @@
+
 FROM postgres:latest
 EXPOSE 5432
 
@@ -7,7 +8,7 @@ COPY /src ./src/
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17 AS prod
-COPY --from=build target/replica-shard-0.0.1-SNAPSHOT.jar replica-shard.jar
+COPY --from=build target/vertical-sharind-0.0.1-SNAPSHOT.jar vertical-sharind.jar
 EXPOSE 9000
 
-ENTRYPOINT ["java", "-jar", "replica-shard.jar"]
+ENTRYPOINT ["java", "-jar", "vertical-sharind.jar"]

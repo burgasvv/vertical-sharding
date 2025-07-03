@@ -3,7 +3,7 @@ server:
   port: 9000
 spring:
   application:
-    name: replica-shard
+    name: vertical-sharding
   jpa:
     open-in-view: false
 first:
