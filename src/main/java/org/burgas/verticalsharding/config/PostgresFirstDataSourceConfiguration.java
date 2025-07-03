@@ -69,6 +69,7 @@ public class PostgresFirstDataSourceConfiguration {
         jpaTransactionManager.setEntityManagerFactory(this.postgresFirstEntityManager().getObject());
         jpaTransactionManager.setJpaDialect(new HibernateJpaDialect());
         jpaTransactionManager.setRollbackOnCommitFailure(true);
+        jpaTransactionManager.setNestedTransactionAllowed(true);
         return jpaTransactionManager;
     }
 

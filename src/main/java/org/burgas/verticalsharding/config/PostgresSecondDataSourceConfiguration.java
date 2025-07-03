@@ -69,6 +69,7 @@ public class PostgresSecondDataSourceConfiguration {
         jpaTransactionManager.setEntityManagerFactory(this.postgresSecondEntityManager().getObject());
         jpaTransactionManager.setJpaDialect(new HibernateJpaDialect());
         jpaTransactionManager.setRollbackOnCommitFailure(true);
+        jpaTransactionManager.setNestedTransactionAllowed(true);
         return jpaTransactionManager;
     }
 
