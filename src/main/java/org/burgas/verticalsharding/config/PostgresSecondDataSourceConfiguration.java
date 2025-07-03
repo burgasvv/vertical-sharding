@@ -49,7 +49,7 @@ public class PostgresSecondDataSourceConfiguration {
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
         entityManagerFactoryBean.setEntityManagerInterface(EntityManager.class);
         entityManagerFactoryBean.setDataSource(this.postgresSecondDataSource());
-        entityManagerFactoryBean.setPackagesToScan("org.burgas.replicashard.entity.second");
+        entityManagerFactoryBean.setPackagesToScan("org.burgas.verticalsharding.entity.second");
         entityManagerFactoryBean.setJpaPropertyMap(
                 Map.of(
                         "hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect",

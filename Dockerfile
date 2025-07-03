@@ -8,7 +8,7 @@ COPY /src ./src/
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17 AS prod
-COPY --from=build target/vertical-sharind-0.0.1-SNAPSHOT.jar vertical-sharind.jar
+COPY --from=build target/vertical-sharding-0.0.1-SNAPSHOT.jar vertical-sharding.jar
 EXPOSE 9000
 
-ENTRYPOINT ["java", "-jar", "vertical-sharind.jar"]
+ENTRYPOINT ["java", "-jar", "vertical-sharding.jar"]

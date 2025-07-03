@@ -49,7 +49,7 @@ public class PostgresFirstDataSourceConfiguration {
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
         entityManagerFactoryBean.setEntityManagerInterface(EntityManager.class);
         entityManagerFactoryBean.setDataSource(this.postgresFirstDataSource());
-        entityManagerFactoryBean.setPackagesToScan("org.burgas.replicashard.entity.first");
+        entityManagerFactoryBean.setPackagesToScan("org.burgas.verticalsharding.entity.first");
         entityManagerFactoryBean.setJpaPropertyMap(
                 Map.of(
                         "hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect",
